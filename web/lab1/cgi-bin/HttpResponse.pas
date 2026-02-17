@@ -1,0 +1,19 @@
+PROGRAM HTTPRESPONSE (INPUT, OUTPUT);
+USES
+  DOS;
+VAR
+  RequestMethod, QueryString, ContentLength, HttpUserAgent, HttpHost: STRING;
+BEGIN
+  WRITELN('Content-Type: text/plain');
+  RequestMethod := GetEnv('REQUEST_METHOD');
+  QueryString := GetEnv('QUERY_STRING');
+  ContentLength := GetEnv('CONTENT_LENGTH');
+  HttpUserAgent := GetEnv('HTTP_USER_AGENT');
+  HttpHost := GetEnv('HTTP_HOST');
+  WRITELN(RequestMethod);
+  WRITELN(QueryString);
+  WRITELN(ContentLength);
+  WRITELN(HttpUserAgent);
+  WRITELN(HttpHost)
+END.
+
